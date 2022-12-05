@@ -4,12 +4,11 @@ if __name__=="__main__":
     with open(INPUT_FILE, "r") as input_file:
         lines = list(map(int, input_file.readlines()))
         increases = 0
-        prev = sum(lines[0:3])
-        for i in range(1, len(lines) - 1):
-            print(prev)
-            line = sum(lines[i: i + 3])
-            if line > prev:
+        prev = lines[0]
+        for i in range(1, len(lines)):
+            if lines[i] > prev:
+                print(prev, lines[i])
                 increases += 1
-            prev = line
+            prev = lines[i]
 
     print(increases)
