@@ -4,7 +4,7 @@ import json
 from colorama import Fore, Style
 from datetime import date
 
-today = date(2021, 12, 1)
+today = date.today()
 
 with open("../secrets.json", "r") as secrets_file:
     COOKIE = json.load(secrets_file)["cookie"]
@@ -31,3 +31,4 @@ def submit_answer(answer, level):
         print(f"{Fore.YELLOW}ALREADY COMPLETED{Style.RESET_ALL}")
     else:
         print(f"{Fore.RED}ANSWER NOT CORRECT{Style.RESET_ALL}")
+        
